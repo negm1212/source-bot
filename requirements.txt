@@ -1,6 +1,2 @@
 telebot
 bs4
-request 
-random
-faker
-string
