@@ -291,7 +291,7 @@ def menu_callback(call):
 					risk = types.InlineKeyboardButton(f"• 𝙍𝙄𝙎𝙆 🏴‍☠️ ➜ [ {riskk} ] •", callback_data='x')
 					cm5 = types.InlineKeyboardButton(f"• 𝙏𝙊𝙏𝘼𝙇 👻 ➜ [ {total} ] •", callback_data='x')
 					stop=types.InlineKeyboardButton(f"[ 𝙎𝙏𝙊𝙋 ]", callback_data='stop')
-										negm=types.InlineKeyboardButton(f" 𝗕𝗢𝗧 𝗕𝗬 𝗡𝗘𝗚𝗠 ➡️ @im_negm ", callback_data='@im_negm')
+					negm=types.InlineKeyboardButton(f"𝗕𝗢𝗧 𝗕𝗬 𝗡𝗘𝗚𝗠 ➡️ @im_negm", callback_data='@im_negm')
 					
 					mes.add(cm1,status, cm3,ccn,risk, cm4, cm5, stop,negm)
 					end_time = time.time()
@@ -403,7 +403,7 @@ def menu_callback(call):
 					risk = types.InlineKeyboardButton(f"• 𝙍𝙄𝙎𝙆 🏴‍☠️ ➜ [ {riskk} ] •", callback_data='x')
 					cm5 = types.InlineKeyboardButton(f"• 𝙏𝙊𝙏𝘼𝙇 👻 ➜ [ {total} ] •", callback_data='x')
 					stop=types.InlineKeyboardButton(f"[ 𝙎𝙏𝙊𝙋 ]", callback_data='stop')
-										negm=types.InlineKeyboardButton(f"𝗕𝗢𝗧 𝗕𝗬 𝗡𝗘𝗚𝗠 ➡️ @im_negm", callback_data='@im_negm')
+					negm=types.InlineKeyboardButton(f" 𝗕𝗢𝗧 𝗕𝗬 𝗡𝗘𝗚𝗠 ➡️ @im_negm ", callback_data=' @im_negm ')
 					
 					mes.add(cm1,status, cm3,ccn,risk, cm4, cm5, stop,negm)
 					end_time = time.time()
