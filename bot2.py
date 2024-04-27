@@ -76,7 +76,7 @@ def start(message):
 	''',reply_markup=keyboard)
 			return
 		keyboard = types.InlineKeyboardMarkup()
-		contact_button = types.InlineKeyboardButton(text="✨ 𝗝𝗢𝗜𝗡 ✨", url="https://t.me/im_negm")
+		contact_button = types.InlineKeyboardButton(text="✨ 𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥 ✨", url="https://t.me/im_negm")
 		keyboard.add(contact_button)
 		username = message.from_user.first_name
 		random_number = random.randint(33, 82)
@@ -105,7 +105,9 @@ def start(message):
 𝟯𝗗 𝗟𝗢𝗢𝗞𝗨𝗣 <code>/vbv </code> 𝗻𝘂𝗺𝗯𝗲𝗿|𝗺𝗺|𝘆𝘆|𝗰𝘃𝗰
 𝗢𝗡𝗟𝗜𝗡𝗘
 
-𝗪𝗲 𝗪𝗶𝗹𝗹 𝗕𝗲 𝗔𝗱𝗱𝗶𝗻𝗴 𝗦𝗼𝗺𝗲 𝗚𝗮𝘁𝗲𝘄𝗮𝘆𝘀 𝗔𝗻𝗱 𝗧𝗼𝗼𝗹𝘀 𝗦𝗼𝗼𝗻</b>
+𝗪𝗲 𝗪𝗶𝗹𝗹 𝗕𝗲 𝗔𝗱𝗱𝗶𝗻𝗴 𝗦𝗼𝗺𝗲 𝗚𝗮𝘁𝗲𝘄𝗮𝘆𝘀 𝗔𝗻𝗱 𝗧𝗼𝗼𝗹𝘀 𝗦𝗼𝗼𝗻 
+
+𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥➡️ @im_negm </b>
 ''',reply_markup=keyboard)
 @bot.message_handler(content_types=["document"])
 def main(message):
