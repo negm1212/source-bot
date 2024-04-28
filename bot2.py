@@ -673,13 +673,15 @@ def start(message):
 			existing_data.update(new_data)
 			with open('data.json', 'w') as json_file:
 				json.dump(existing_data, json_file, ensure_ascii=False, indent=4)	
-			msg=f'''<b>𝗡𝗘𝗪 𝗞𝗘𝗬 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 🚀
+			msg=f'''<b>𝗡𝗘𝗪 𝗞𝗘𝗬 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 ✔🚀
 		
 𝗣𝗟𝗔𝗡 ➜ {plan}
 𝗘𝗫𝗣𝗜𝗥𝗘𝗦 𝗜𝗡 ➜ {ig}
 𝗞𝗘𝗬 ➜ <code>{pas}</code>
 		
-𝗨𝗦𝗘 /redeem [𝗞𝗘𝗬]</b>'''
+𝗨𝗦𝗘 /redeem [𝗞𝗘𝗬]
+𝗕𝗢𝗧 ➡️ [ @negmchk1191bot ] 
+𝘉𝘖𝘛 𝘉𝘠 𝘕𝘌𝘎𝘔 ➡️ [ @im_negm ] </b>'''
 			bot.reply_to(message,msg,parse_mode="HTML")
 		except Exception as e:
 			print('ERROR : ',e)
