@@ -1,5 +1,5 @@
 telebot
-bs4
+beautifulsoup4
 faker
 user_agent
 requests
