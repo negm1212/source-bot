@@ -2,3 +2,6 @@ telebot
 bs4
 faker
 user_agent
+random
+requests
+string
