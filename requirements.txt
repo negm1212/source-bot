@@ -3,4 +3,3 @@ bs4
 faker
 user_agent
 requests
-string
