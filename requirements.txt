@@ -3,3 +3,5 @@ faker
 bs4
 user_agent
 requests
+BeautifulSoup
+BeautifulSoup4
