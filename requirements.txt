@@ -2,4 +2,4 @@ telebot
 beautifulsoup4
 faker
 user_agent
-requests
+bs4
