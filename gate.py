@@ -79,7 +79,7 @@ def Tele(ccx):
     'sec-fetch-site': 'cross-site',
     'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
     }
-    json_data = {
+	json_data = {
     'clientSdkMetadata': {
         'source': 'client',
         'integration': 'custom',
@@ -105,8 +105,8 @@ def Tele(ccx):
     },
     'operationName': 'TokenizeCreditCard',
     }
-
-    res2 = requests.post(f'https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
+	
+	res2 = requests.post(f'https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
 
 
 	headers = {
