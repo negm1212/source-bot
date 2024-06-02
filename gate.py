@@ -62,7 +62,7 @@ def Tele(ccx):
 	encoded_text = T
 	decoded_text = base64.b64decode(encoded_text).decode('utf-8')
 	au=re.findall(r'"authorizationFingerprint":"(.*?)"',decoded_text)[0]
-    headers = {
+    	headers = {
     'authority': 'payments.braintree-api.com',
     'accept': '*/*',
     'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
