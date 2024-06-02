@@ -549,8 +549,8 @@ def respond_to_vbv(message):
 			}
 	if command_usage[idt]['last_time'] is not None:
 		time_diff = (current_time - command_usage[idt]['last_time']).seconds
-		if time_diff < 25:
-			bot.reply_to(message, f"<b>Try again after {25-time_diff} seconds.</b>",parse_mode="HTML")
+		if time_diff < 30:
+			bot.reply_to(message, f"<b>Try again after {30-time_diff} seconds.</b>",parse_mode="HTML")
 			return	
 	ko = (bot.reply_to(message, "𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜 𝙔𝙤𝙪𝙧 𝘾𝙖𝙧𝙙𝙨...⌛").message_id)
 	try:
