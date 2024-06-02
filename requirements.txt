@@ -4,3 +4,4 @@ bs4
 user_agent
 requests
 beautifulsoup4
+requests_toolbelt
