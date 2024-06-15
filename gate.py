@@ -63,48 +63,49 @@ def Tele(ccx):
 	decoded_text = base64.b64decode(encoded_text).decode('utf-8')
 	au=re.findall(r'"authorizationFingerprint":"(.*?)"',decoded_text)[0]
 	headers = {
-        'accept': '*/*',
-        'accept-language': 'ar,en-US;q=0.9,en;q=0.8',
-        'authorization': f'Bearer {au}',
-        'braintree-version': '2018-05-10',
-        'content-type': 'application/json',
-        'origin': 'https://assets.braintreegateway.com',
-        'referer': 'https://assets.braintreegateway.com/',
-        'sec-ch-ua': '"Google Chrome";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'cross-site',
-        'user-agent': user,
-    }
+    'authority': 'payments.braintree-api.com',
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9,ar;q=0.8',
+    'authorization': 'Bearer {au}',
+    'braintree-version': '2018-05-10',
+    'content-type': 'application/json',
+    'origin': 'https://assets.braintreegateway.com',
+    'referer': 'https://assets.braintreegateway.com/',
+    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'cross-site',
+    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+	}
 
 	json_data = {
-        'clientSdkMetadata': {
-            'source': 'client',
-            'integration': 'custom',
-            'sessionId': 'b17c9cd3-08a2-45ad-bf9b-c44450c8a642',
-        },
-        'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
-        'variables': {
-            'input': {
-                'creditCard': {
-                    'number': n,
-                    'expirationMonth': mm,
-                    'expirationYear': yy,
-                    'cvv': cvc,
-                    'billingAddress': {
-                        'postalCode': '92866',
-                        'streetAddress': '1107 E Chapman Ave',
-                    },
-                },
-                'options': {
-                    'validate': False,
+    'clientSdkMetadata': {
+        'source': 'client',
+        'integration': 'custom',
+        'sessionId': '57e989e2-1332-4ce1-8702-8e8dd2972771',
+    },
+    'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
+    'variables': {
+        'input': {
+            'creditCard': {
+                'number': n,
+                'expirationMonth': mm,
+                'expirationYear': yy,
+                'cvv': cvc,
+                'billingAddress': {
+                    'postalCode': '10080',
+                    'streetAddress': 'new street 7',
                 },
             },
+            'options': {
+                'validate': False,
+            },
         },
-        'operationName': 'TokenizeCreditCard',
-    }
+    },
+    'operationName': 'TokenizeCreditCard',
+	}
 
 	res2 = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
 	token = res2.json()['data']['tokenizeCreditCard']['token']
