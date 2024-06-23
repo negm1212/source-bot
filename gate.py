@@ -30,34 +30,33 @@ def Tele(ccx):
 	user = user_agent.generate_user_agent()
 
 	cookies = {
-    'mailchimp_landing_site': 'https%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Frw%2Fmy-account%2Fadd-payment-method%2F',
     '_vwo_uuid_v2': 'D47BD6FA3C4240D3BC082759F65E88E4A|850b410a46ede3555dd8f711c7f0e6fe',
-    'sbjs_migrations': '1418474375998%3D1',
-    'sbjs_current_add': 'fd%3D2024-06-22%2015%3A07%3A41%7C%7C%7Cep%3Dhttps%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
-    'sbjs_first_add': 'fd%3D2024-06-22%2015%3A07%3A41%7C%7C%7Cep%3Dhttps%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
     'sbjs_current': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
-    'sbjs_first': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
-    'sbjs_udata': 'vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36',
     'data-timeout': 'false||false',
     '_gcl_au': '1.1.119124793.1719068862',
     '_ga': 'GA1.1.186869105.1719068863',
-    '_clck': '1bzk810%7C2%7Cfmu%7C0%7C1634',
     '_fbp': 'fb.1.1719068863887.64631563425330570',
     'country_redirect': 'true',
-    '_hjSession_3568193': 'eyJpZCI6IjE2YTA5NTJlLTgxMWItNDJjMC1hZTk5LTc5YTM1NWIwZDA2YiIsImMiOjE3MTkwNjg4NjQ0NzAsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=',
-    'mailchimp.cart.current_email': 'negm2898@gmail.com',
     'mailchimp_user_email': 'negm2898%40gmail.com',
     'modal_dismissed': '1',
     '_hjSessionUser_3568193': 'eyJpZCI6IjQyNmM2Mzc0LWUxMGYtNWI3MS04NzRiLWViZGY2NGM2MWFhMyIsImNyZWF0ZWQiOjE3MTkwNjg4NjQ0NjQsImV4aXN0aW5nIjp0cnVlfQ==',
-    'mailchimp.cart.previous_email': 'negm2898@gmail.com',
-    'wordpress_sec_3347843f7c91a46d5cf935aab282ae83': 'negm2898%7C1720278431%7CXSKOo1kREpQqgMxAGNOFA4YvsN5FZEYwbcftya8TfeO%7Cb4750d81bf94ee61f7602a5eee676a2d32bb232c36c4dd07d92d2b7e6c7cf716',
-    'wordpress_logged_in_3347843f7c91a46d5cf935aab282ae83': 'negm2898%7C1720278431%7CXSKOo1kREpQqgMxAGNOFA4YvsN5FZEYwbcftya8TfeO%7C2a11ea38a5f7e71974759295167d8f1fbd0fffc244c8dd5f8d1d3c0539590d97',
-    'sbjs_session': 'pgs%3D20%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Fmy-account%2Fadd-payment-method%2F',
-    '_uetsid': '2ccc656030a911ef85e36b7011a3cdc3',
+    'modal_dismissed_checkout': '1',
+    'mailchimp_landing_site': 'https%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Frw%2Fcheckout%2F',
+    '_clck': '1bzk810%7C2%7Cfmv%7C0%7C1634',
+    'wordpress_sec_3347843f7c91a46d5cf935aab282ae83': 'negm2898%7C1720380858%7CsQ8mpKq5pw87x0lgh62XHLztvKjHTtLqyktfIrWWhNJ%7C661809dccc766d3b22d845366931ea3a00c1a057cbb441dcea76128d51d6b218',
+    'wordpress_logged_in_3347843f7c91a46d5cf935aab282ae83': 'negm2898%7C1720380858%7CsQ8mpKq5pw87x0lgh62XHLztvKjHTtLqyktfIrWWhNJ%7Cfc49e7d98314b4e2a7f04ba495c67fef725978090379f973a5bb2f1af308beac',
+    'wp_woocommerce_session_3347843f7c91a46d5cf935aab282ae83': '31244%7C%7C1719344060%7C%7C1719340460%7C%7C1c39060d4620e8416f74ee5b84043274',
+    'sbjs_udata': 'vst%3D6%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36',
+    '_hjSession_3568193': 'eyJpZCI6IjExMjVlZjUwLTBhZTAtNDI0OC05M2NhLTQyZmQ1NWYyNmZlNiIsImMiOjE3MTkxODU0MTAzODMsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MX0=',
+    'wfwaf-authcookie-25fd32b62d30b7200d0835762df11d7f': '31244%7Cother%7C%7Ce74abc113db7e006b0f10e95cd37bad475b570b4b0c7efac57e5f87aa334d9c5',
+    'sbjs_migrations': '1418474375998%3D1',
+    'sbjs_first': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
+    'sbjs_session': 'pgs%3D12%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Fmy-account%2Fpayment-methods%2F',
+    '_uetsid': '65238bc0318611ef84d1b1ffa22d1517',
     '_uetvid': '2ccd240030a911efb85c55bdb206350c',
-    '_ga_T9Q7G4SDBR': 'GS1.1.1719068862.1.1.1719069104.39.0.0',
-    '_clsk': 'bsyb6e%7C1719069105088%7C10%7C1%7Cw.clarity.ms%2Fcollect',
-}
+    '_ga_T9Q7G4SDBR': 'GS1.1.1719185409.5.1.1719186312.6.0.0',
+    '_clsk': '1d87yxo%7C1719186312956%7C3%7C1%7Cq.clarity.ms%2Fcollect',
+	}
 
 	headers = {
     'authority': 'www.rossanoferretti.com',
@@ -214,36 +213,7 @@ def Tele(ccx):
     
 
 
-	cookies = {
-    'mailchimp_landing_site': 'https%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Frw%2Fmy-account%2Fadd-payment-method%2F',
-    '_vwo_uuid_v2': 'D47BD6FA3C4240D3BC082759F65E88E4A|850b410a46ede3555dd8f711c7f0e6fe',
-    'sbjs_migrations': '1418474375998%3D1',
-    'sbjs_current_add': 'fd%3D2024-06-22%2015%3A07%3A41%7C%7C%7Cep%3Dhttps%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
-    'sbjs_first_add': 'fd%3D2024-06-22%2015%3A07%3A41%7C%7C%7Cep%3Dhttps%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
-    'sbjs_current': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
-    'sbjs_first': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
-    'sbjs_udata': 'vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36',
-    'data-timeout': 'false||false',
-    '_gcl_au': '1.1.119124793.1719068862',
-    '_ga': 'GA1.1.186869105.1719068863',
-    '_clck': '1bzk810%7C2%7Cfmu%7C0%7C1634',
-    '_fbp': 'fb.1.1719068863887.64631563425330570',
-    'country_redirect': 'true',
-    '_hjSession_3568193': 'eyJpZCI6IjE2YTA5NTJlLTgxMWItNDJjMC1hZTk5LTc5YTM1NWIwZDA2YiIsImMiOjE3MTkwNjg4NjQ0NzAsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=',
-    'mailchimp.cart.current_email': 'negm2898@gmail.com',
-    'mailchimp_user_email': 'negm2898%40gmail.com',
-    'modal_dismissed': '1',
-    '_hjSessionUser_3568193': 'eyJpZCI6IjQyNmM2Mzc0LWUxMGYtNWI3MS04NzRiLWViZGY2NGM2MWFhMyIsImNyZWF0ZWQiOjE3MTkwNjg4NjQ0NjQsImV4aXN0aW5nIjp0cnVlfQ==',
-    'mailchimp.cart.previous_email': 'negm2898@gmail.com',
-    'wordpress_sec_3347843f7c91a46d5cf935aab282ae83': 'negm2898%7C1720278431%7CXSKOo1kREpQqgMxAGNOFA4YvsN5FZEYwbcftya8TfeO%7Cb4750d81bf94ee61f7602a5eee676a2d32bb232c36c4dd07d92d2b7e6c7cf716',
-    'wordpress_logged_in_3347843f7c91a46d5cf935aab282ae83': 'negm2898%7C1720278431%7CXSKOo1kREpQqgMxAGNOFA4YvsN5FZEYwbcftya8TfeO%7C2a11ea38a5f7e71974759295167d8f1fbd0fffc244c8dd5f8d1d3c0539590d97',
-    'wfwaf-authcookie-25fd32b62d30b7200d0835762df11d7f': '31244%7Cother%7C%7C4f1973269cf5e61dd3e77c55a19f2ecc70971f07f174649c3ed7d319388c741e',
-    'sbjs_session': 'pgs%3D24%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fwww.rossanoferretti.com%2Frw%2Fmy-account%2Fadd-payment-method%2F',
-    '_uetsid': '2ccc656030a911ef85e36b7011a3cdc3',
-    '_uetvid': '2ccd240030a911efb85c55bdb206350c',
-    '_clsk': 'bsyb6e%7C1719069303032%7C12%7C1%7Cw.clarity.ms%2Fcollect',
-    '_ga_T9Q7G4SDBR': 'GS1.1.1719068862.1.1.1719069308.40.0.0',
-}
+
 
 	headers = {
     'authority': 'www.rossanoferretti.com',
