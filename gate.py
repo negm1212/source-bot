@@ -87,8 +87,8 @@ def Tele(ccx):
 	headers = {
     'authority': 'payments.braintree-api.com',
     'accept': '*/*',
-    'accept-language': 'en-US,en;q=0.9,ar;q=0.8',
-    'authorization': f'Bearer {au}',
+    'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
+    'authorization': 'Bearer {au}',
     'braintree-version': '2018-05-10',
     'content-type': 'application/json',
     'origin': 'https://assets.braintreegateway.com',
@@ -100,13 +100,13 @@ def Tele(ccx):
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'cross-site',
     'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
-}
+	}
 
 	json_data = {
     'clientSdkMetadata': {
         'source': 'client',
         'integration': 'custom',
-        'sessionId': '75bce4f8-3d39-4e4b-88ec-77e688cc9af4',
+        'sessionId': 'dff0493b-080d-4aee-9152-44b69133a432',
     },
     'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
     'variables': {
@@ -117,8 +117,8 @@ def Tele(ccx):
                 'expirationYear': yy,
                 'cvv': cvc,
                 'billingAddress': {
-                    'postalCode': '',
-                    'streetAddress': '135 New Airport Road',
+                    'postalCode': '10080',
+                    'streetAddress': '735 New Madinat Zayed Road',
                 },
             },
             'options': {
@@ -127,10 +127,9 @@ def Tele(ccx):
         },
     },
     'operationName': 'TokenizeCreditCard',
-}
+	}
 
 	res2 = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
-
 
 	token = res2.json()['data']['tokenizeCreditCard']['token']
     
