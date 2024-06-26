@@ -264,6 +264,8 @@ def Tele(ccx):
 	match = re.search(pattern, text)
 	if match:
 		result = match.group(1)
+		if 'Duplicate' in result:
+		    result = "1000: Approved"
 		if 'risk_threshold' in text:
 		    result = "RISK: Retry this BIN later."
 	else:
