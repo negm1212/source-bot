@@ -15,9 +15,9 @@ from multiprocessing import Process
 import threading
 from bs4 import BeautifulSoup
 stopuser = {}
-token = '6894857781:AAElskkQ6EyZ_go26YsvAaibpWEIlSd42hI'
+token = '6956244170:AAFptXJqIqOTRsllOqAK10UV-WnDeg50Q3g'
 bot=telebot.TeleBot(token,parse_mode="HTML")
-admin=6870768048
+admin=6434627665
 command_usage = {}
 def reset_command_usage():
 	for user_id in command_usage:
@@ -287,17 +287,14 @@ def menu_callback(call):
 					if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last:
 						live += 1
 						bot.send_message(call.from_user.id, msg)
-					if "CVV" in last:
+					if "CVV" in last or 'Card Issuer Declined CVV' in last:
 					    ccnn+=1
-					    bot.send_message(call.from_user.id, msgc)
-						
-					
-					   
-					if 'risk' in last or 'threshold' in last or 'risk_threshold' in last or 'RISK:' in last or 'Rety' in last or 'RISK: Retry this BIN later.' in last or 'RISK: Retry this BIN later' in last:
+					    bot.send_message(call.from_user.id, msgc)						  
+					elif 'risk' in last or 'threshold' in last or 'risk_threshold' in last or 'RISK:' in last or 'Rety' in last or 'RISK: Retry this BIN later.' in last or 'RISK: Retry this BIN later' in last:
 						riskk+=1
 					else:
 						dd += 1
-					time.sleep(20)
+					time.sleep(25)
 		except Exception as e:
 			print(e)
 		stopuser[f'{id}']['status'] = 'start'
