@@ -15,9 +15,9 @@ from multiprocessing import Process
 import threading
 from bs4 import BeautifulSoup
 stopuser = {}
-token = '6894857781:AAElskkQ6EyZ_go26YsvAaibpWEIlSd42hI'
+token = '6956244170:AAFptXJqIqOTRsllOqAK10UV-WnDeg50Q3g'
 bot=telebot.TeleBot(token,parse_mode="HTML")
-admin=6870768048
+admin=6434627665
 command_usage = {}
 def reset_command_usage():
 	for user_id in command_usage:
@@ -272,13 +272,29 @@ def menu_callback(call):
 𝙄𝙨𝙨𝙪𝙚𝙧 ➼ {bank}
 𝙏𝙞𝙢𝙚 ➼ {"{:.1f}".format(execution_time)}
 𝗕𝗼𝘁 𝗕𝘆: @im_negm</b>'''
+
+					msgc=f'''<b>𝘾𝘾𝙉 ✅
+			
+𝘾𝙖𝙧𝙙 ➼ <code>{cc}</code>
+𝙍𝙚𝙨𝙥𝙤𝙣𝙨𝙚 ➼ {last}
+𝙂𝙖𝙩𝙚𝙬𝙖𝙮 ➼ {gate}		
+𝙄𝙣𝙛𝙤 ➼ {card_type} - {brand}
+𝘾𝙤𝙪𝙣𝙩𝙧𝙮 ➼ {country} - {country_flag} 
+𝘽𝙞𝙣 ➼ {cc[:6]}
+𝙄𝙨𝙨𝙪𝙚𝙧 ➼ {bank}
+𝙏𝙞𝙢𝙚 ➼ {"{:.1f}".format(execution_time)}
+𝗕𝗼𝘁 𝗕𝘆: @im_negm</b>'''
 					if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last:
 						live += 1
 						bot.send_message(call.from_user.id, msg)
-					elif 'risk:' in last:
-						risk+=1
-					elif 'CVV' in last:
-						ccnn+=1
+					if "CVV" in last:
+					    ccnn+=1
+					    bot.send_message(call.from_user.id, msgc)
+						
+					
+					   
+					if 'risk' in last or 'threshold' in last or 'risk_threshold' in last or 'RISK:' in last or 'Rety' in last or 'RISK: Retry this BIN later.' in last or 'RISK: Retry this BIN later' in last:
+						riskk+=1
 					else:
 						dd += 1
 					time.sleep(20)
