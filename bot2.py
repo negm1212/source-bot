@@ -15,7 +15,7 @@ from multiprocessing import Process
 import threading
 from bs4 import BeautifulSoup
 stopuser = {}
-token = '6894857781:AAElskkQ6EyZ_go26YsvAaibpWEIlSd42hI'
+token = '7610572641:AAFnbai0tL-VwVPgHd15cAzazUmueEyIes8'
 bot=telebot.TeleBot(token,parse_mode="HTML")
 admin=6870768048
 command_usage = {}
@@ -57,8 +57,7 @@ def start(message):
 • 𝗧𝗛𝗜𝗦 𝗕𝗢𝗧 𝗜𝗦 𝗪𝗜𝗧𝗛 𝗔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗣𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 𝗧𝗔𝗟𝗞 𝗧𝗢 𝗧𝗛𝗘 𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥 𝗧𝗢 𝗔𝗖𝗧𝗜𝗩𝗔𝗧𝗘 𝗧𝗛𝗘 𝗕𝗢𝗧 𝗙𝗢𝗥 𝗬𝗢𝗨
 
 
-• 𝗬𝗢𝗨𝗥 𝗣𝗟𝗔𝗡 𝗡𝗢𝗪 ➜ {BL} 
-
+• 𝗬𝗢𝗨𝗥 𝗣𝗟𝗔𝗡 𝗡𝗢𝗪 ➜ 𝗙𝗥𝗘𝗘 
 
 • 𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥 ➜ @im_negm </b>
 	''',reply_markup=keyboard)
@@ -69,7 +68,9 @@ def start(message):
 		username = message.from_user.first_name
 		random_number = random.randint(33, 82)
 		photo_url = f'https://t.me/bkddgfsa/{random_number}'
-		bot.send_photo(chat_id=message.chat.id, photo=photo_url, caption='''𝘾𝙡𝙞𝙘𝙠 /cmds 𝙏𝙤 𝙑𝙞𝙚𝙬 𝙏𝙝𝙚 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 𝙊𝙧 𝙎𝙚𝙣𝙙 𝙏𝙝𝙚 𝙁𝙞𝙡𝙚 𝘼𝙣𝙙 𝙄 𝙒𝙞𝙡𝙡 𝘾𝙝𝙚𝙘𝙠 𝙄𝙩''',reply_markup=keyboard)
+		bot.send_photo(chat_id=message.chat.id, photo=photo_url, caption='''𝘾𝙡𝙞𝙘𝙠 /cmds 𝙏𝙤 𝙑𝙞𝙚𝙬 𝙏𝙝𝙚 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 𝙊𝙧 𝙎𝙚𝙣𝙙 𝙏𝙝𝙚 𝙁𝙞𝙡𝙚 𝘼𝙣𝙙 𝙄 𝙒𝙞𝙡𝙡 𝘾𝙝𝙚𝙘𝙠 𝙄𝙩
+		
+''',reply_markup=keyboard)
 	my_thread = threading.Thread(target=my_function)
 	my_thread.start()
 @bot.message_handler(commands=["cmds"])
@@ -85,17 +86,14 @@ def start(message):
 	contact_button = types.InlineKeyboardButton(text=f"✨ {BL}  ✨",callback_data='plan')
 	keyboard.add(contact_button)
 	bot.send_message(chat_id=message.chat.id, text=f'''<b> 
-𝗧𝗵𝗲𝘀𝗲 𝗔𝗿𝗲 𝗧𝗵𝗲 𝗕𝗼𝘁'𝗦 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀
+• 𝗧𝗵𝗲𝘀𝗲 𝗔𝗿𝗲 𝗧𝗵𝗲 𝗕𝗼𝘁'𝗦 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀
 
-𝗕𝗿𝗮𝗶𝗻𝘁𝗿𝗲𝗲 𝗔𝘂𝘁𝗵 <code>/chk </code> 𝗻𝘂𝗺𝗯𝗲𝗿|𝗺𝗺|𝘆𝘆|𝗰𝘃𝗰
-𝗦𝗧𝗔𝗧𝗨𝗦 𝗢𝗡𝗟𝗜𝗡𝗘 
+• 𝗕𝗿𝗮𝗶𝗻𝘁𝗿𝗲𝗲 𝗔𝘂𝘁𝗵 <code>/chk </code> 𝗻𝘂𝗺𝗯𝗲𝗿|𝗺𝗺|𝘆𝘆|𝗰𝘃𝗰
 
-𝟯𝗗 𝗟𝗢𝗢𝗞𝗨𝗣 <code>/vbv </code> 𝗻𝘂𝗺𝗯𝗲𝗿|𝗺𝗺|𝘆𝘆|𝗰𝘃𝗰
-𝗢𝗡𝗟𝗜𝗡𝗘
 
-𝗪𝗲 𝗪𝗶𝗹𝗹 𝗕𝗲 𝗔𝗱𝗱𝗶𝗻𝗴 𝗦𝗼𝗺𝗲 𝗚𝗮𝘁𝗲𝘄𝗮𝘆𝘀 𝗔𝗻𝗱 𝗧𝗼𝗼𝗹𝘀 𝗦𝗼𝗼𝗻 
+• 𝗬𝗢𝗨𝗥 𝗣𝗟𝗔𝗡 𝗡𝗢𝗪 ➜ {BL}
 
-𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥➡️ @im_negm </b>
+• 𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥➡️ @im_negm </b>
 ''',reply_markup=keyboard)
 @bot.message_handler(content_types=["document"])
 def main(message):
@@ -187,6 +185,7 @@ def menu_callback(call):
 		live = 0
 		riskk = 0
 		ccnn = 0
+		error = 0
 		bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text= "𝘾𝙝𝙚𝙘𝙠𝙞𝙣𝙜 𝙔𝙤𝙪𝙧 𝘾𝙖𝙧𝙙𝙨...⌛")
 		try:
 			with open("combo.txt", 'r') as file:
@@ -203,24 +202,24 @@ def menu_callback(call):
 						bot.edit_message_text(chat_id=call.chat.id, message_id=ko, text='𝗦𝗧𝗢𝗣𝗣𝗘𝗗 ✅\n𝗕𝗢𝗧 𝗕𝗬 ➜ @im_negm')
 						return
 					try:
-						data = requests.get('https://lookup.binlist.net/'+cc[:6]).json()
+						data = requests.get('https://bins.antipublic.cc/bins/'+cc[:6]).json()
 						
 					except:
 						pass
 					try:
-						bank=(data['bank']['name'])
+						bank=(data['bank'])
 					except:
 						bank=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
 					try:
-						country_flag=(data['country']['emoji'])
+						country_flag=(data['country_flag'])
 					except:
 						country_flag=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
 					try:
-						country=(data['country']['name'])
+						country=(data['country_name'])
 					except:
 						country=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
 					try:
-						brand=(data['scheme'])
+						brand=(data['brand'])
 					except:
 						brand=('𝒖𝒏𝒌𝒏𝒐𝒘𝒏')
 					try:
@@ -234,7 +233,7 @@ def menu_callback(call):
 					
 					start_time = time.time()
 					try:
-						last = str(Tele(cc))
+						last = str(chk(cc))
 					except Exception as e:
 						print(e)
 						last = "ERROR"
@@ -249,11 +248,12 @@ def menu_callback(call):
 					ccn = types.InlineKeyboardButton(f"• 𝘾𝘾𝙉 ☑️ ➜ [ {ccnn} ] •", callback_data='x')
 					cm4 = types.InlineKeyboardButton(f"• 𝘿𝙀𝘾𝙇𝙄𝙉𝙀𝘿 ❌ ➜ [ {dd} ] •", callback_data='x')
 					risk = types.InlineKeyboardButton(f"• 𝙍𝙄𝙎𝙆 🏴‍☠️ ➜ [ {riskk} ] •", callback_data='x')
+					eror = types.InlineKeyboardButton(f"• 𝙀𝙍𝙍𝙊𝙍 💀 ➜ [ {error} ] •", callback_data='x')
 					cm5 = types.InlineKeyboardButton(f"• 𝙏𝙊𝙏𝘼𝙇 👻 ➜ [ {total} ] •", callback_data='x')
 					stop=types.InlineKeyboardButton(f"[ 𝙎𝙏𝙊𝙋 ]", callback_data='stop')
 					negm=types.InlineKeyboardButton(f"𝗕𝗢𝗧 𝗕𝗬 𝗡𝗘𝗚𝗠 ➡️ @im_negm", callback_data='@im_negm')
 					
-					mes.add(cm1,status, cm3,ccn,risk, cm4, cm5, stop,negm)
+					mes.add(cm1,status, cm3,ccn,risk, cm4,eror,cm5,stop,negm)
 					end_time = time.time()
 					execution_time = end_time - start_time
 					bot.edit_message_text(chat_id=call.message.chat.id, 
@@ -273,7 +273,7 @@ def menu_callback(call):
 𝙏𝙞𝙢𝙚 ➼ {"{:.1f}".format(execution_time)}
 𝗕𝗼𝘁 𝗕𝘆: @im_negm</b>'''
 
-					msgc=f'''<b>𝘾𝘾𝙉 ✅
+					msgc=f'''<b>𝘾𝘾𝙉 ☑️
 			
 𝘾𝙖𝙧𝙙 ➼ <code>{cc}</code>
 𝙍𝙚𝙨𝙥𝙤𝙣𝙨𝙚 ➼ {last}
@@ -284,14 +284,16 @@ def menu_callback(call):
 𝙄𝙨𝙨𝙪𝙚𝙧 ➼ {bank}
 𝙏𝙞𝙢𝙚 ➼ {"{:.1f}".format(execution_time)}
 𝗕𝗼𝘁 𝗕𝘆: @im_negm</b>'''
-					if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last:
+					if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last or 'avs: Gateway Rejected: avs' in last:
 						live += 1
 						bot.send_message(call.from_user.id, msg)
-					if "CVV" in last or 'Card Issuer Declined CVV' in last:
+					elif "CVV" in last or 'Card Issuer Declined CVV' in last:
 					    ccnn+=1
-					    bot.send_message(call.from_user.id, msgc)						  
+					    bot.send_message(call.from_user.id, msgc)
 					elif 'risk' in last or 'threshold' in last or 'risk_threshold' in last or 'RISK:' in last or 'Rety' in last or 'RISK: Retry this BIN later.' in last or 'RISK: Retry this BIN later' in last:
 						riskk+=1
+					elif "error" in last or 'Error' in last or 'ERROR' in last: 
+					    error +=1
 					else:
 						dd += 1
 					time.sleep(25)
@@ -511,7 +513,7 @@ Card: XXXXXXXXXXXXXXXX|MM|YYYY|CVV</b>''',parse_mode="HTML")
 	start_time = time.time()
 	try:
 		command_usage[idt]['last_time'] = datetime.now()
-		last = str(Tele(cc))
+		last = str(chk(cc))
 	except Exception as e:
 		last='Error'
 	try: data = requests.get('https://bins.antipublic.cc/bins/'+cc[:6]).json()
@@ -558,10 +560,72 @@ Card: XXXXXXXXXXXXXXXX|MM|YYYY|CVV</b>''',parse_mode="HTML")
 𝙄𝙨𝙨𝙪𝙚𝙧 ➼ {bank}
 𝙏𝙞𝙢𝙚 ➼ {"{:.1f}".format(execution_time)}
 𝗕𝗼𝘁 𝗕𝘆: @im_negm</b>'''
-	if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last:
+	if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last or 'avs: Gateway Rejected: avs' in last:
 		bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text=msg)
 	else:
 		bot.edit_message_text(chat_id=message.chat.id, message_id=ko, text=msgd)
+@bot.message_handler(commands=["bin"])
+def get_bin_info(message):
+    try:
+        # Extract the BIN from the message
+        bin_number = message.text.split()[1]
+
+        # Check if the BIN number has exactly 6 digits
+        if len(bin_number) != 6 or not bin_number.isdigit():
+            bot.send_message(message.chat.id, "Error: The BIN number must be exactly 6 digits.")
+            return
+
+        # Notify the user that the information is being fetched
+        waiting_message = bot.send_message(message.chat.id, "𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩 𝙖 𝙛𝙚𝙬 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 𝙬𝙝𝙞𝙡𝙚 𝙬𝙚 𝙛𝙚𝙩𝙘𝙝 𝙩𝙝𝙚 𝙗𝙞𝙣 𝙞𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣...")
+
+        # Fetch data from the API
+        api_url = f"https://bins.antipublic.cc/bins/{bin_number}"
+        response = requests.get(api_url)
+        data = response.json()
+
+        # Extract information from the API response
+        try:
+            brand = data['brand']
+        except KeyError:
+            brand = 'Unknown'
+        try:
+            card_type = data['type']
+        except KeyError:
+            card_type = 'Unknown'
+        try:
+            card_level = data['level']
+        except KeyError:
+            card_level = 'Unknown'
+        try:
+            country = data['country_name']
+            country_flag = data['country_flag']
+        except KeyError:
+            country = 'Unknown'
+            country_flag = 'Unknown'
+        try:
+            bank = data['bank']
+        except KeyError:
+            bank = 'Unknown'
+
+        # Create a message with the extracted information
+        response_message = f"""
+        <b>𝘽𝙞𝙣 𝙄𝙣𝙛𝙤:
+        
+𝘽𝙞𝙣 ➼ <code>{bin_number}</code>
+
+𝙄𝙣𝙛𝙤 ➼ {card_type} - {brand} - {card_level}
+
+𝘾𝙤𝙪𝙣𝙩𝙧𝙮 ➼ <code>{country} </code>- {country_flag} 
+
+𝙄𝙨𝙨𝙪𝙚𝙧 ➼<code> {bank}</code>
+
+𝗕𝗼𝘁 𝗕𝘆: @im_negm
+       </b> """
+
+        # Edit the waiting message to show the BIN information
+        bot.edit_message_text(chat_id=message.chat.id, message_id=waiting_message.message_id, text=response_message, parse_mode='HTML')
+    except Exception as e:
+        bot.send_message(message.chat.id, f"Error: {str(e)}")
 @bot.message_handler(func=lambda message: message.text.lower().startswith('.redeem') or message.text.lower().startswith('/redeem'))
 def respond_to_vbv(message):
 	def my_function():
@@ -625,7 +689,7 @@ def start(message):
 𝗞𝗘𝗬 ➜ <code>{pas}</code>
 𝗨𝗦𝗘 /redeem [𝗞𝗘𝗬]
 ––————––————––————––————––—————––—————––——––————––
-𝗕𝗢𝗧 ➡️ [ @negmchk1191bot ] 
+𝗕𝗢𝗧 ➡️ [ @negmchk_bot ] 
 
 𝘉𝘖𝘛 𝘉𝘠 𝘕𝘌𝘎𝘔 ➡️ [ @im_negm ] </b>'''
 			bot.reply_to(message,msg,parse_mode="HTML")
